@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, Bestie!</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #ffafbd;
+            --secondary: #ffc3a0;
+            --text: #4a4a4a;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        nav button {
+            background: none;
+            border: 2px solid transparent;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-weight: 600;
+            color: white;
+            transition: 0.3s;
+            border-radius: 20px;
+        }
+
+        nav button:hover, nav button.active {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Content Sections */
+        .container {
+            max-width: 800px;
+            width: 90%;
+            margin: 2rem auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .page { display: none; animation: fadeIn 0.8s ease; }
+        .page.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h1 { font-family: 'Dancing Script', cursive; font-size: 3.5rem; color: #d63384; margin-bottom: 1rem; }
+        
+        /* Gallery Grid */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .photo-card {
+            background: #eee;
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border: 5px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .photo-card img { width: 100%; height: 100%; object-fit: cover; }
+
+        .wish-text { font-style: italic; font-size: 1.2rem; line-height: 1.6; }
+
+        footer { margin-top: auto; padding: 20px; color: white; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <button onclick="showPage('home')" id="btn-home" class="active">Home</button>
+    <button onclick="showPage('memories')" id="btn-memories">Memories</button>
+    <button onclick="showPage('best-times')" id="btn-best-times">Best Times</button>
+    <button onclick="showPage('message')" id="btn-message">My Message</button>
+</nav>
+  <audio control autoplay>
+        <source src="bday.mp3">
+    </audio>
+<div class="container">
+  
+ <div id="home" class="page active">
+        <h1>Happy Birthday! 🎂</h1>
+        <p>To my favorite human. Today is all about you!</p>
+        
+        <div class="photo-card" style="height: 400px; margin: 20px auto; width: 100%; max-width: 320px; border-radius: 15px; overflow: hidden; border: 8px solid white; background-color: #f9f9f9;">
+            <img src="assets/chld.jpeg" alt="Birthday Girl" style="width: 50%; height: 100%; object-fit: contain;">
+        </div>
+        
+        <p>Keep shining, keep smiling, and keep being the amazing soul you are.</p>
+    </div>
+
+  <div id="memories" class="page">
+        <h1>Our Memories 📸</h1>
+        <p>A glimpse into our crazy journey together.</p>
+        <div class="grid">
+            <div class="photo-card">
+                <img src="assets/shm.jpeg" alt="First Meet">
+            </div>
+            <div class="photo-card">
+                <img src="assets/mnv1.jpeg" alt="College Days">
+            </div>
+            <div class="photo-card">
+                <img src="assets/lk.jpeg" alt="Late Nights">
+            </div>
+            <div class="photo-card">
+                <img src="assets/WhatsApp Image 2026-02-06 at 2.23.28 AM.jpeg" alt="Road Trips">
+            </div>
+        </div>
+    </div>
+
+    <div id="best-times" class="page">
+        <h1>A Few Things I Adore About You ✨</h1>
+        <ul style="list-style: none; text-align: left; max-width: 400px; margin: 20px auto;">
+            <li style="margin-bottom: 15px;">🌟 <strong>That Gussa Se Dekhna:</strong>And Muh Fulla Lena.</li>
+            <li style="margin-bottom: 15px;">🌟 <strong>That Smile When you Are Happy.</strong> </li>
+            <li style="margin-bottom: 15px;">🌟 <strong>Mainly Hmko tum Gussa Me he Achhi lagti ho</strong>.</li>
+        </ul>
+    </div>
+
+    <div id="message" class="page">
+        <h1>To My Best Friend 💖</h1>
+        <p class="wish-text">
+            "Thank you for being the person who knows me best and loves me anyway. 
+            You've seen me at my best and my worst, and you've never left my side. 
+            May this year bring you as much joy as you bring to everyone around you."
+        </p>
+        <p style="margin-top: 20px; font-weight: bold;">Chhoti Chhoti Batton Par Jaldi Mt Rooya Kro!</p>
+    </div>
+</div>
+
+<footer>Made with ❤️ for the Birthday Girl</footer>
+
+<script>
+    function showPage(pageId) {
+        // Hide all pages
+        document.querySelectorAll('.page').forEach(page => {
+            page.classList.remove('active');
+        });
+        // Remove active class from buttons
+        document.querySelectorAll('nav button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        // Show selected page
+        document.getElementById(pageId).classList.add('active');
+        // Set button to active
+        document.getElementById('btn-' + pageId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
